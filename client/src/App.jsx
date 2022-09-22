@@ -19,13 +19,14 @@ const App = () => {
             initialRender = false;
         } else {
             clearTimeout(timeout)
-            timeout = setTimeout(() => {
-                console.log(searchingImage);
-                api(`/search/photos/${searchingImage}`).then(data => {
-                    console.log('dataa', data.results)
-                    setImages(data.results)
-                }).catch((err) => console.log('err', err))
-            }, 500);
+            if (searchingImage != '') {
+                timeout = setTimeout(() => {
+                    api(`/search/photos/${searchingImage}`).then(data => {
+                        console.log('dataa', data.results)
+                        setImages(data.results)
+                    }).catch((err) => console.log('err', err))
+                }, 500);
+            }
         }
 
     }, [searchingImage])
@@ -40,19 +41,15 @@ const App = () => {
 
 
     return (
-        <div>
-
-
-            <input type="search" value={searchingImage} onChange={(e) => setsearchingImage(e.target.value)} />
+        <div className='flex justify-center flex-col'>
+            <input type="search" value={searchingImage} placeholder='search for image...' onChange={(e) => setsearchingImage(e.target.value)} className='p-2 w-full m-3 md:w-3/4 shadow-lg font-semibold text-lg  text-center mx-auto' />
             {
                 !images ? <h2>loading...</h2> :
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 ">
                         {images?.map((image) => (
                             <Image key={image.id} {...image} />
-                           
                         ))}
                     </div>
-
             }
         </div>
     )

@@ -9,16 +9,6 @@ const baseurl = `https://api.unsplash.com`
 
 
 
-
-
-
-
-
-
-
-
-
-
 // GET photos from the unsplash api
 app.get('/images', async (req, res) => {
     try {
@@ -28,7 +18,7 @@ app.get('/images', async (req, res) => {
         console.log(error);
     }
 })
-
+// search an image 
 app.get('/search/photos/:name', async (req, res) => {
     const { name } = req.params;
 
