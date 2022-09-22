@@ -1,0 +1,20 @@
+{
+  "name": "image_lookup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayubRaffa/image_lookUp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayubRaffa/image_lookUp/issues"
+  },
+  "homepage": "https://github.com/ayubRaffa/image_lookUp#readme"
+}
