@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useEffect } from 'react'
 import api from './components/api'
 import Image from './components/Image'
@@ -38,6 +38,7 @@ const App = () => {
         })
     }, [])
 
+
     return (
         <div>
 
@@ -48,6 +49,7 @@ const App = () => {
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 ">
                         {images?.map((image) => (
                             <Image key={image.id} {...image} />
+                           
                         ))}
                     </div>
 
